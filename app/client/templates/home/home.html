@@ -1,0 +1,51 @@
+<template name="Home">
+  <div class="home clearfix">
+    <section class="{{activeTab}}">
+    	<div class="{{#if loggedIn}}col-sm-8{{else}}col-sm-12{{/if}}">
+        
+        {{#ReservationTabs tabs=tabs}}
+        {{#tabContent slug="active"}}
+          {{>Reservations isFulfilled=false}}
+        {{/tabContent}}
+
+        {{#tabContent slug="fulfilled"}}
+          {{>Reservations isFulfilled=true}}
+        {{/tabContent}}
+        {{/ReservationTabs}}
+    	</div>
+
+        {{#if loggedIn}}
+
+        <hr class="visible-xs"/>
+
+    	<div class="col-sm-4">
+    		{{>ReservationForm}}
+    	</div>
+        
+
+        {{/if}}
+    	
+    </section>
+  </div>
+</template>
+
+<template name="ReservationTabs">
+
+    {{#if activeTab}}
+    {{trackActiveTab activeTab}}
+    {{/if}}
+    {{trackTabs tabs}}
+    
+    <section class="reservations-tabs">
+        <ul class="nav nav-tabs nav-justified">
+            {{#each tabs}}
+                <li role="presentation" class="tab-item {{isActiveTab slug}}"><a href="#">{{name}}({{count}})</a></li>
+            {{/each}}
+        </ul>    
+    </section>
+    
+    <div class="reservation-panels {{activeTab}}">
+        {{> UI.contentBlock context=__context__ }}
+    </div>
+
+</template>

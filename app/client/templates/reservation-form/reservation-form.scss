@@ -1,0 +1,60 @@
+/*****************************************************************************/
+/* Reservation: Style */
+/*****************************************************************************/
+
+
+.reservation-form {
+	
+	border-bottom: none;
+    input[type=number],
+	input[type=text],
+	select,
+	textarea{
+		 width: 100%;
+	}
+
+	.dropdown button{
+		width:100%;
+	}
+
+	textarea{ resize: vertical; }
+
+	.reservation-form-label{
+	    display: block;
+		text-transform: uppercase;
+		font-size: x-small;
+		margin-bottom: 5px;
+	}
+
+	.reservation-form-name .input-group.invalid{
+		.input-group-addon{ 
+		    color: white;
+		    background-color: indianred;
+		    border-color: indianred;
+		}
+
+		::-webkit-input-placeholder {
+   			color: #D67070;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   color: #D67070;  
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color: #D67070;  
+		}
+
+		:-ms-input-placeholder {  
+		   color: #D67070;  
+		}
+
+		.form-control{ 
+			border-color: indianred;
+		}
+	}
+}
+
+.reservation-form-footer{
+	
+}

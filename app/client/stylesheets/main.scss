@@ -1,0 +1,10 @@
+/*****************************************************************************/
+/* main: Style */
+/*****************************************************************************/
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic);
+@import "variables";
+@import "client/stylesheets/global.scss";
+@import "client/templates/home/home.scss";
+@import "client/templates/reservation-form/reservation-form.scss";
+@import "client/templates/login/login.scss";
+@import "client/templates/reservations/reservations.scss";

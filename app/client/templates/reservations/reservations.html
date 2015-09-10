@@ -1,0 +1,64 @@
+<template name="Reservations">
+  <div class="reservations area-container clearfix">
+    <div>
+    <table class="table table-hover">
+    <thead>
+    	<tr>
+    		<th>Name</th>
+    		<th>Party</th>
+    		<th>Date/Time</th>
+    		<th class="hidden-xs">Adults</th>
+    		<th class="hidden-xs">Kids</th>
+    		<th>Sitting</th>
+    		<th>Notes</th>
+    		{{#if loggedIn}}
+    		<th></th>
+    		<th></th>
+    		{{/if}}
+    		
+    	</tr>
+    </thead>
+
+	<tbody>
+	{{#each reservations isFulfilled}}
+	<!-- data-tooltip="{{fromNow createdAt}}" -->
+	<tr>
+		<td>{{name}}</td>
+		<td>{{party adults kids}}</td>
+		<td>{{pretty date}}</td>
+		<td class="hidden-xs">{{adults}}</td>
+		<td class="hidden-xs">{{kids}}</td>
+		<td>{{sitting}}</td>
+		<td>{{#if notes}}<span class="simptip-position-top simptip-multiline" data-tooltip="{{notes}}"><span class="fa fa-sticky-note-o"></span></span>{{/if}}</td>
+		{{#if loggedIn}}
+			{{#if isFulfilled}}
+				<td>
+					<span class="simptip-position-top" data-tooltip="Restore">
+						<div class="base-button reservation-button-restore fa fa-undo"></div>
+					</span>
+				</td>
+			{{else}}
+				<td>
+				<span class="simptip-position-top" data-tooltip="Fulfill">
+					<div class="base-button green reservation-button-fulfill fa fa-check"></div>
+					</span>
+				</td>
+			{{/if}}
+
+			<td>
+			<span class="simptip-position-top" data-tooltip="Delete">
+				<div class="base-button red reservation-button-discard fa fa-remove"></div>
+				</span>
+			</td>
+
+		{{/if}}
+	</tr>
+	{{else}}
+	<tr><td class="empty-table-row" colspan="9">{{emptyMessage isFulfilled}}</td></tr>
+	{{/each}}
+	</tbody>
+    </table>
+    
+    </div>
+  </div>
+</template>

@@ -1,0 +1,38 @@
+$base-font-family: 'Lato' sans-serif;
+$base-font-color: #666;
+
+$base-theme-color: #666;
+$base-theme-color-light: lighten($base-theme-color, 10%);
+$base-theme-color-lighter: lighten($base-theme-color, 15%);
+$base-theme-color-dark: darken($base-theme-color, 10%);
+$base-theme-color-darker: darken($base-theme-color, 15%);
+
+$base-theme-color-white: #fff;
+$base-theme-color-white-dark: darken($base-theme-color-white, 10%);
+$base-theme-color-white-darker: darken($base-theme-color-white, 15%);
+
+$base-theme-color-grey: #ccc;
+$base-theme-color-grey-light: lighten($base-theme-color-grey, 10%);
+$base-theme-color-grey-lighter: lighten($base-theme-color-grey, 15%);
+$base-theme-color-grey-dark: darken($base-theme-color-grey, 10%);
+$base-theme-color-grey-darker: darken($base-theme-color-grey, 15%);
+
+$button-color:slateblue;
+$button-color-text-color:#fff;
+$button-color-hover:lighten($button-color, 10%);
+$button-color-border:darken($button-color, 10%);
+
+$button-color-red:indianred;
+$button-color-red-text-color:#fff;
+$button-color-red-hover:lighten($button-color-red, 10%);
+$button-color-red-border:darken($button-color-red, 10%);
+
+$button-color-blue:cornflowerblue;
+$button-color-blue-text-color:#fff;
+$button-color-blue-hover:lighten($button-color-blue, 10%);
+$button-color-blue-border:darken($button-color-blue, 10%);
+
+$button-color-green:#65AF65;
+$button-color-green-text-color:#fff;
+$button-color-green-hover:lighten($button-color-green, 10%);
+$button-color-green-border:darken($button-color-green, 10%);

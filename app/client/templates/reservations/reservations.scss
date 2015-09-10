@@ -1,0 +1,12 @@
+/*****************************************************************************/
+/* Reservations: Style */
+/*****************************************************************************/
+.reservations {
+	&.area-container{
+		border-top:none;
+		box-shadow: 0px 2px 5px -3px #999;
+		overflow: scroll;
+	}
+
+	.empty-table-row{ height: 277px; }
+}

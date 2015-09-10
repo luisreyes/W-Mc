@@ -1,0 +1,151 @@
+body {
+    font-family: $base-font-family;
+    color: $base-font-color;
+    background-color: $base-theme-color-grey-light;
+}
+
+header {
+    background-color: cornflowerblue;
+    padding: 20px;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #32323C;
+    padding: 5px;
+    font-size: x-small;
+    text-align: right;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.area-container {
+    padding: 10px 0 0;
+    background-color: $base-theme-color-white;
+    border: 1px solid $base-theme-color-white-darker;
+}
+
+#login-buttons {
+
+    padding: 17px 0;
+
+    .login-button{
+        transition: all 250ms;
+        color: $button-color-blue-text-color;
+        background-color: $button-color-blue;
+        border: 1px solid $button-color-blue-border;
+        border-radius: 2px;
+        &:hover {
+            background-color: $button-color-blue-hover;
+        }
+    }
+
+    #login-buttons-logout{
+        color: $button-color-red-text-color;
+        background-color: $button-color-red;
+        border: 1px solid $button-color-red-border;
+        &:hover {
+            background-color: $button-color-red-hover;
+        }
+    }
+
+    a.login-link-text{ text-transform:uppercase;
+        color: #fff; }
+}
+
+.base-button {
+    transition: all 250ms;
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    color: $button-color-text-color;
+    background-color: $button-color;
+    border: 1px solid $button-color-border;
+    border-radius: 2px;
+    &.full {
+        width: 100%;
+    }
+    &:hover {
+        background-color: $button-color-hover;
+    }
+    &.red {
+        color: $button-color-red-text-color;
+        background-color: $button-color-red;
+        border: 1px solid $button-color-red-border;
+        &:hover {
+            background-color: $button-color-red-hover;
+        }
+    }
+    &.green {
+        color: $button-color-green-text-color;
+        background-color: $button-color-green;
+        border: 1px solid $button-color-green-border;
+        &:hover {
+            background-color: $button-color-green-hover;
+        }
+    }
+    &.blue {
+        color: $button-color-blue-text-color;
+        background-color: $button-color-blue;
+        border: 1px solid $button-color-blue-border;
+        &:hover {
+            background-color: $button-color-blue-hover;
+        }
+    }
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=number],
+input[type=date],
+input[type=checkbox],
+textarea,
+select {
+    transition: all 100ms ease-in-out;
+    outline: none;
+    &:focus {
+        box-shadow: 0 0 0 2px orange inset;
+        border: 1px solid orange;
+    }
+}
+
+//----------------------//
+//-Bootstrap Overrrides-//
+//----------------------//
+.container {
+    padding: 0;
+}
+
+.table {
+    margin-bottom: 0;
+    th {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: x-small;
+    }
+    tr td {
+        text-align: center;
+        vertical-align: middle !important;
+    }
+}
+
+.form-control,
+textarea, .btn,
+.input-group-addon {
+    border-radius: 2px;
+    border-color: #ccc;
+}
+
+.input-group-addon {
+    background-color: #eee;
+    color: #aaa;
+}

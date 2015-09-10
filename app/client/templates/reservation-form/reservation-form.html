@@ -1,0 +1,68 @@
+<template name="ReservationForm">
+{{#if loggedIn}}
+<div class="reservation-form area-container clearfix">
+	
+	<section class="">
+		<label class="reservation-form-name col-xs-12">
+			<span class="reservation-form-label">Name</span>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				<input id="formName" class="form-control" placeholder="Name" type="text" data-bind="value: name"/>
+			</div>
+		</label>
+		<label class="reservation-form-date col-xs-12">
+			<span class="reservation-form-label">Date</span>
+			<div class="input-group datetimepicker">
+				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				<input id="formDate" class="form-control" type="text" data-bind="value: date"/>
+			</div>
+		</label>
+	</section>
+	<section class="">
+		<label class="reservation-form-adults col-xs-6 col-md-6">
+			<span class="reservation-form-label">Adult(s)</span>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-male"></i></span>
+				<input class="form-control" type="number" min="1" max="10" data-bind="value: adults"/>
+			</div>
+		</label>
+		
+		<label class="reservation-form-kids col-xs-6 col-md-6">
+			<span class="reservation-form-label">Kid(s)</span>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-child"></i></span>
+				<input class="form-control" type="number" min="0" max="10" data-bind="value: kids"/>
+			</div>
+		</label>
+		
+		<label class="reservation-form-table col-xs-12 col-md-12">
+			<span class="reservation-form-label">Sitting</span>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<span data-bind="text: sitting"></span>
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+					<li><a href="#">Table</a></li>
+					<li><a href="#">Booth</a></li>
+				</ul>
+			</div>
+		</label>
+	</section>
+	<section class="">
+		<label class="reservation-form-notes col-xs-12">
+			<span class="reservation-form-label">Notes</span>
+			<textarea data-bind="value: notes"></textarea>
+		</label>
+	</section>
+</div>
+<div class="reservation-form-footer clearfix">
+	<div class="base-button full blue reservation-form-button-add"> Add Reservation </div>
+</div>
+{{else}}
+<section class="area-container clearfix">
+<div>Log In to Add Reservations</div>
+<div>{{>Login}}</div>
+</section>
+{{/if}}
+</template>
