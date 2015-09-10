@@ -12,6 +12,7 @@ header {
 
 footer {
     position: fixed;
+    z-index: 10;
     width: 100%;
     bottom: 0;
     background-color: #32323C;
@@ -24,11 +25,15 @@ h1, h2, h3 {
     margin: 0;
 }
 
+hr{ border-color: #ccc; }
+
 .area-container {
     padding: 10px 0 0;
     background-color: $base-theme-color-white;
     border: 1px solid $base-theme-color-white-darker;
 }
+
+.dim{ opacity: 0.15; }
 
 #login-buttons {
 

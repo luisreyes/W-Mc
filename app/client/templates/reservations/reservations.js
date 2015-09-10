@@ -37,8 +37,9 @@ Template.Reservations.onCreated(function() {
   Handlebars.registerHelper('pretty', function(date) {
     return moment(date).format("ddd, MMM Do - h:mm a");
   });
-  Handlebars.registerHelper('fromNow', function(date) {
-    return 'Reservation created ' + moment(date).fromNow();
+  Handlebars.registerHelper('fromNow', function(date, isFulfilled) {
+    var prepend = isFulfilled ? 'Fulfilled' : 'Created';
+    return prepend + ' ' + moment(date).fromNow();
   });
 });
 

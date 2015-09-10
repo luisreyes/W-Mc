@@ -4,6 +4,9 @@
     <table class="table table-hover">
     <thead>
     	<tr>
+    		{{#if loggedIn}}
+    		<th>Info</th>
+    		{{/if}}
     		<th>Name</th>
     		<th>Party</th>
     		<th>Date/Time</th>
@@ -23,13 +26,28 @@
 	{{#each reservations isFulfilled}}
 	<!-- data-tooltip="{{fromNow createdAt}}" -->
 	<tr>
+		{{#if loggedIn}}
+		<td>
+			<span class="simptip-position-right" data-tooltip="{{#if isFulfilled}}{{fromNow fulfilledAt isFulfilled}}{{else}}{{fromNow createdAt isFulfilled}}{{/if}}">
+				<span class="fa fa-info-circle"></span>
+			</span>
+		</td>
+		{{/if}}
 		<td>{{name}}</td>
 		<td>{{party adults kids}}</td>
 		<td>{{pretty date}}</td>
 		<td class="hidden-xs">{{adults}}</td>
 		<td class="hidden-xs">{{kids}}</td>
 		<td>{{sitting}}</td>
-		<td>{{#if notes}}<span class="simptip-position-top simptip-multiline" data-tooltip="{{notes}}"><span class="fa fa-sticky-note-o"></span></span>{{/if}}</td>
+		<td>
+		{{#if notes}}
+			<span class="simptip-position-top simptip-multiline" data-tooltip="{{notes}}">
+				<span class="fa fa-sticky-note-o"></span>
+			</span>
+		{{else}}
+			<span class="fa fa-sticky-note-o dim"></span>
+		{{/if}}
+		</td>
 		{{#if loggedIn}}
 			{{#if isFulfilled}}
 				<td>
@@ -54,7 +72,7 @@
 		{{/if}}
 	</tr>
 	{{else}}
-	<tr><td class="empty-table-row" colspan="9">{{emptyMessage isFulfilled}}</td></tr>
+	<tr><td class="empty-table-row" colspan="10">{{emptyMessage isFulfilled}}</td></tr>
 	{{/each}}
 	</tbody>
     </table>
